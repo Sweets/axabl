@@ -11,7 +11,7 @@ Boolean initialize_axui() {
     CFDictionaryRef options = (CFDictionaryRef)@{
         (id)kAXTrustedCheckOptionPrompt: @true
     };
-    process_is_trusted = AXIsProcessTrustedWithOptions(options);
+    Boolean process_is_trusted = AXIsProcessTrustedWithOptions(options);
 
     if (!process_is_trusted)
         return false;
