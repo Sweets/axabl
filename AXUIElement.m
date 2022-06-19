@@ -124,13 +124,8 @@ AXValueRef axui_encode_struct_value(AXValueType type, void *pointer) {
     return AXValueCreate(type, (const void*)pointer);
 }
 
-void *axui_decode_struct_value(AXValueRef structure, AXValueType type) {
-    void *decoded_value = NULL; // may need memory allocation?
-
-    if (AXValueGetValue(structure, type, decoded_value))
-        return decoded_value;
-
-    return NULL;
+void axui_decode_struct_value(AXValueRef structure, AXValueType type, void *to_pointer) {
+    AXValueGetValue(structure, type, to_pointer);
 }
 
 CGWindowID axui_get_window_id(AXUIElementRef ax_element) {

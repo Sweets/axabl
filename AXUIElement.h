@@ -24,6 +24,6 @@ CFTypeRef axui_get_attribute(AXUIElementRef, CFStringRef);
 void axui_set_attribute(AXUIElementRef, CFStringRef, CFTypeRef);
 
 AXValueRef axui_encode_struct_value(AXValueType, void*);
-void *axui_decode_struct_value(AXValueRef, AXValueType);
+void axui_decode_struct_value(AXValueRef, AXValueType, void*);
 
 CGWindowID axui_get_window_id(AXUIElementRef);
