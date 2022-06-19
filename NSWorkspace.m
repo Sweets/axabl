@@ -20,6 +20,10 @@ void finalize_nsworkspace() {
     [installed_ns_observers release];
 }
 
+NSArray *nsworkspace_running_applications() {
+    return [[NSWorkspace sharedWorkspace] runningApplications];
+}
+
 void nsworkspace_install_observer(NSNotificationName name, void (^block)(NSNotification*)) {
     [notification_center
         addObserverForName:name object:nil queue:nil usingBlock:block];
