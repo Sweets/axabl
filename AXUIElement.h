@@ -20,7 +20,7 @@ AXUIElementRef axui_decode_element(id);
 bool axui_install_observer(AXUIElementRef, CFStringRef, AXObserverCallback);
 void axui_uninstall_observer(AXUIElementRef, CFStringRef);
 
-void axui_get_attribute(AXUIElementRef, CFStringRef, CFTypeRef*);
+CFTypeRef axui_get_attribute(AXUIElementRef, CFStringRef);
 void axui_set_attribute(AXUIElementRef, CFStringRef, CFTypeRef);
 
 AXValueRef axui_encode_struct_value(AXValueType, void*);

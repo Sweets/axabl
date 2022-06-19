@@ -101,8 +101,12 @@ void axui_uninstall_observer(AXUIElementRef element, CFStringRef notification) {
     CFRelease(observer);
 }
 
-void axui_get_attribute(AXUIElementRef ax_element, CFStringRef attribute, CFTypeRef *value) {
-    AXUIElementCopyAttributeValue(ax_element, attribute, value);
+CFTypeRef axui_get_attribute(AXUIElementRef ax_element, CFStringRef attribute) {
+    CFTypeRef value;
+
+    AXUIElementCopyAttributeValue(ax_element, attribute, &value);
+
+    return value;
 }
 
 void axui_set_attribute(AXUIElementRef ax_element, CFStringRef attribute, CFTypeRef value) {
