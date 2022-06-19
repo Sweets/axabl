@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-void initialize_axui(void);
+Boolean initialize_axui(void);
 void finalize_axui(void);
 
 AXUIElementRef axui_create_application_element(id);

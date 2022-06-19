@@ -7,8 +7,18 @@ extern AXError _AXUIElementGetWindow(AXUIElementRef, CGWindowID*);
 
 NSMutableDictionary *installed_ax_observers;
 
-void initialize_axui() {
+Boolean initialize_axui() {
+    CFDictionaryRef options = (CFDictionaryRef)@{
+        (id)kAXTrustedCheckOptionPrompt: @true
+    };
+    process_is_trusted = AXIsProcessTrustedWithOptions(options);
+
+    if (!process_is_trusted)
+        return false;
+
     installed_ax_observers = [[NSMutableDictionary alloc] init];
+
+    return true;
 }
 
 void finalize_axui() {
