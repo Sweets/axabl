@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
 
 Boolean initialize_axui(void);
 void finalize_axui(void);
