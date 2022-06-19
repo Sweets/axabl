@@ -1,4 +1,3 @@
-#pragma once
 #import <Foundation/Foundation.h>
 
 void initialize_axui(void);
