@@ -3,8 +3,6 @@
 
 #import "AXUIElement.h"
 
-extern AXError _AXUIElementGetWindow(AXUIElementRef, CGWindowID*);
-
 NSMutableDictionary *installed_ax_observers;
 
 Boolean initialize_axui() {
@@ -126,11 +124,4 @@ AXValueRef axui_encode_struct_value(AXValueType type, void *pointer) {
 
 void axui_decode_struct_value(AXValueRef structure, AXValueType type, void *to_pointer) {
     AXValueGetValue(structure, type, to_pointer);
-}
-
-CGWindowID axui_get_window_id(AXUIElementRef ax_element) {
-    CGWindowID window_identifier = 0;
-    _AXUIElementGetWindow(ax_element, &window_identifier);
-
-    return window_identifier;
 }
