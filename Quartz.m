@@ -49,6 +49,6 @@ CGRect quartz_get_window_frame(AXUIElementRef ax_element) {
 }
 
 void quartz_set_window_frame(AXUIElementRef ax_element, CGRect frame) {
-    quartz_set_window_origin(frame.origin);
-    quartz_set_window_size(frame.size);
+    quartz_set_window_origin(ax_element, frame.origin);
+    quartz_set_window_size(ax_element, frame.size);
 }
